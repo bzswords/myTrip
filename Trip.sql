@@ -63,7 +63,7 @@ CREATE TABLE Address (zip CHAR(20) NOT NULL,
 
 # Weak entity set to Travel
 CREATE TABLE Activity (aname CHAR(20) NOT NULL,    # Ex: Dinner
-                       descr VARCHAR(80) NOT NULL, # Ex: Eat dinner at Tony's and explore area
+                       descr VARCHAR(80) NOT NULL, # Ex: Eat dinner at Tonys and explore area
                        adate DATE NOT NULL,        
                        atime TIME NOT NULL,
                        trip CHAR(20) NOT NULL,
