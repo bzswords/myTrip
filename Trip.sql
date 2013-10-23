@@ -144,20 +144,20 @@ DELIMITER ;
 # Weak entity set to Trip, dominant entity set to Activity
 CREATE TABLE Travel (trid CHAR(20) NOT NULL,
                      method VARCHAR(15) NOT NULL,
-					 tdate DATE NOT NULL,
+		     tdate DATE NOT NULL,
                      start_time TIME NOT NULL,
                      eta TIME NOT NULL,
-					 trip CHAR(20) NOT NULL,
-					 place CHAR(20) NOT NULL, # where travel event is beginning
+	             trip CHAR(20) NOT NULL,
+		     place CHAR(20) NOT NULL, # where travel event is beginning
                      destination CHAR(20) NOT NULL, # where travel event is ended
                      PRIMARY KEY (trid, trip),
                      FOREIGN KEY (trip) REFERENCES Trip (title)
-                                             ON DELETE CASCADE
-                                             ON UPDATE CASCADE,
+                                                   ON DELETE CASCADE
+                                                   ON UPDATE CASCADE,
                      FOREIGN KEY (destination) REFERENCES Location (lid)
-                                             ON UPDATE CASCADE,
-					 FOREIGN KEY (place) REFERENCES Location (lid)
-                                             ON UPDATE CASCADE);
+                                                          ON UPDATE CASCADE,
+		     FOREIGN KEY (place) REFERENCES Location (lid)
+                                                    ON UPDATE CASCADE);
 
 
 
