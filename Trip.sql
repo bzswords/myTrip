@@ -45,7 +45,7 @@ DELIMITER ;
 # Stores info on different locations that will be visited on trip
 CREATE TABLE Location (lid CHAR(20) NOT NULL,   
                        lname CHAR(50) NOT NULL, # Ex: Tonys Pizzeria
-					   street VARCHAR(60),      # Ex: 85 Main Street
+                       street VARCHAR(60),      # Ex: 85 Main Street
                        lzip CHAR(20), 
                        PRIMARY KEY (lid),
                        FOREIGN KEY (lzip) REFERENCES Address (zip)
@@ -57,7 +57,7 @@ CREATE TABLE Address (zip CHAR(20) NOT NULL,
                       city VARCHAR(40) NOT NULL,
                       country CHAR(40) NOT NULL,
                       state CHAR(20) DEFAULT ' ',
-					  PRIMARY KEY (zip, city));
+		      PRIMARY KEY (zip, city));
 
 #################################################################################
 
@@ -71,13 +71,13 @@ CREATE TABLE Activity (aname CHAR(20) NOT NULL,    # Ex: Dinner
 					   travel CHAR(20) NOT NULL,
                        PRIMARY KEY(descr, travel),
                        FOREIGN KEY (trip) REFERENCES Trip (title)
-									         ON DELETE CASCADE
-											 ON UPDATE CASCADE,
+				                     ON DELETE CASCADE
+						     ON UPDATE CASCADE,
                        FOREIGN KEY (location) REFERENCES Location (lid)
-                                                      ON UPDATE CASCADE,
+                                                         ON UPDATE CASCADE,
                        FOREIGN KEY (travel) REFERENCES Travel (trid)
-									        	ON DELETE CASCADE
-                                                ON UPDATE CASCADE);
+						       ON DELETE CASCADE
+                                                       ON UPDATE CASCADE);
 
 
 
