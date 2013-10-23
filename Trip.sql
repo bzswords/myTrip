@@ -44,7 +44,7 @@ DELIMITER ;
 
 # Stores info on different locations that will be visited on trip
 CREATE TABLE Location (lid CHAR(20) NOT NULL,   
-                       lname CHAR(50) NOT NULL, # Ex: Tony's Pizzeria
+                       lname CHAR(50) NOT NULL, # Ex: Tonys Pizzeria
 					   street VARCHAR(60),      # Ex: 85 Main Street
                        lzip CHAR(20), 
                        PRIMARY KEY (lid),
